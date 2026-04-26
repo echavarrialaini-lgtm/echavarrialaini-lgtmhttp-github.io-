@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Metadatos esenciales del documento -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TabletPro – Venta, análisis y comparación de tabletas electrónicas." />
+  <title>TabletPro | Tu tienda de tabletas</title>
+
+  <!-- Enlace al archivo CSS externo (Caso 3) -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Fuentes de Google: Rajdhani (display tecnológico) + Nunito (cuerpo legible) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER: Encabezado principal con logo y eslogan rotativo
+       ============================================================ -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <!-- Logo de la empresa -->
+      <div class="logo">
+        <span class="logo-icon">⊞</span>
+        <span class="logo-text">Tablet<strong>Pro</strong></span>
+      </div>
+
+      <!-- Frases tecnológicas rotativas (controladas por script.js) -->
+      <p id="frase-rotativa" class="frase-rotativa" aria-live="polite">
+        Tecnología que te acompaña a donde vayas.
+      </p>
+
+      <!-- Botón hamburguesa para móvil -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- ============================================================
+         NAV: Navegación principal con categorías de tabletas
+         ============================================================ -->
+    <nav class="main-nav" id="main-nav" aria-label="Categorías de tabletas">
+      <ul class="nav-list">
+        <li><a href="#destacada" class="nav-link">Inicio</a></li>
+        <li><a href="#academicas" class="nav-link">Académicas</a></li>
+        <li><a href="#profesionales" class="nav-link">Profesionales</a></li>
+        <li><a href="#creativas" class="nav-link">Creativas</a></li>
+        <li><a href="#comparativa" class="nav-link">Comparar</a></li>
+        <li><a href="#opiniones" class="nav-link">Opiniones</a></li>
+        <li><a href="#contacto" class="nav-link nav-cta">Contáctanos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ============================================================
+       MAIN: Contenido principal del sitio
+       ============================================================ -->
+  <main>
+
+    <!-- ============================================================
+         SECCIÓN 1: Tableta destacada (hero section)
+         ============================================================ -->
+    <section id="destacada" class="section section-hero" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <span class="badge">⭐ Más vendida</span>
+        <h1 id="hero-title">Samsung Galaxy Tab S9 Ultra</h1>
+        <p class="hero-desc">
+          Rendimiento extremo, pantalla AMOLED de 14.6" y S Pen incluido.
+          La tableta profesional que redefine los límites del trabajo móvil.
+        </p>
+        <div class="hero-price">
+          <span id="precio-hero" class="price-tag">$1,199.99</span>
+          <span class="price-original">$1,399.99</span>
+        </div>
+
+        <!-- Selector de descuento (Caso 4 – Simulador de descuento) -->
+        <div class="descuento-box">
+          <label for="descuento-select">Aplicar descuento:</label>
+          <select id="descuento-select">
+            <option value="0">Sin descuento</option>
+            <option value="10">10% de descuento</option>
+            <option value="15">15% de descuento</option>
+          </select>
+          <button id="btn-descuento" class="btn btn-secondary">Calcular</button>
+        </div>
+
+        <!-- Botón mostrar/ocultar especificaciones (Caso 4) -->
+        <button id="btn-specs" class="btn btn-primary" aria-expanded="false" aria-controls="specs-hero">
+          Ver especificaciones técnicas
+        </button>
+
+        <!-- Bloque de especificaciones ocultas por defecto -->
+        <div id="specs-hero" class="specs-panel" aria-hidden="true" hidden>
+          <ul class="specs-list">
+            <li><strong>Procesador:</strong> Snapdragon 8 Gen 2</li>
+            <li><strong>RAM:</strong> 12 GB</li>
+            <li><strong>Almacenamiento:</strong> 256 GB</li>
+            <li><strong>Pantalla:</strong> 14.6" AMOLED 120 Hz</li>
+            <li><strong>Batería:</strong> 11,200 mAh</li>
+            <li><strong>S Pen:</strong> Incluido</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Imagen dinámica de la tableta (Caso 4 – cambio de imagen al clic) -->
+      <div class="hero-image-wrap">
+        <img
+          id="img-hero"
+          src="https://images.unsplash.com/photo-1589492477829-5e65395b66cc?w=600&q=80"
+          alt="Samsung Galaxy Tab S9 Ultra – vista frontal"
+          class="hero-img"
+          width="600" height="400"
+        />
+        <div class="img-thumbs" role="group" aria-label="Vistas del producto">
+          <button
+            class="thumb-btn active"
+            aria-label="Vista frontal"
+            data-src="https://images.unsplash.com/photo-1589492477829-5e65395b66cc?w=600&q=80"
+            data-alt="Samsung Galaxy Tab S9 Ultra – vista frontal"
+          >1</button>
+          <button
+            class="thumb-btn"
+            aria-label="Vista lateral"
+            data-src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=600&q=80"
+            data-alt="Tableta – vista lateral"
+          >2</button>
+          <button
+            class="thumb-btn"
+            aria-label="Vista con S Pen"
+            data-src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=80"
+            data-alt="Tableta con lápiz óptico"
+          >3</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECCIÓN 2: Catálogo por categorías
+         ============================================================ -->
+
+    <!-- Categoría: Académicas -->
+    <section id="academicas" class="section section-catalog" aria-labelledby="titulo-academicas">
+      <div class="section-header">
+        <h2 id="titulo-academicas" class="section-title">Tabletas <span>Académicas</span></h2>
+        <p class="section-subtitle">Ideales para estudiantes y entornos educativos</p>
+      </div>
+      <div class="cards-grid">
+
+        <!-- Tarjeta de producto: Lenovo Tab P12 -->
+        <article class="product-card" aria-label="Lenovo Tab P12">
+          <div class="card-badge">Académica</div>
+          <img
+            src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=400&q=80"
+            alt="Lenovo Tab P12"
+            class="card-img"
+            width="400" height="260"
+            loading="lazy"
+          />
+          <div class="card-body">
+            <h3 class="card-title">Lenovo Tab P12</h3>
+            <ul class="card-specs">
+              <li><span>Procesador</span><strong>MediaTek Dimensity 7050</strong></li>
+              <li><span>RAM</span><strong>8 GB</strong></li>
+              <li><span>Almacenamiento</span><strong>128 GB</strong></li>
+              <li><span>Pantalla</span><strong>12.7" LCD</strong></li>
+            </ul>
+            <p class="card-price">$449.99</p>
+            <button class="btn btn-primary btn-card">Ver detalles</button>
+          </div>
+        </article>
+
+        <!-- Tarjeta de producto: Samsung Galaxy Tab A9+ -->
+        <article class="product-card" aria-label="Samsung Galaxy Tab A9+">
+          <div class="card-badge">Académica</div>
+          <img
+            src="https://images.unsplash.com/photo-1561154464-82e9adf32764?w=400&q=80"
+            alt="Samsung Galaxy Tab A9+"
+            class="card-img"
+            width="400" height="260"
+            loading="lazy"
+          />
+          <div class="card-body">
+            <h3 class="card-title">Samsung Galaxy Tab A9+</h3>
+            <ul class="card-specs">
+              <li><span>Procesador</span><strong>Snapdragon 695</strong></li>
+              <li><span>RAM</span><strong>8 GB</strong></li>
+              <li><span>Almacenamiento</span><strong>128 GB</strong></li>
+              <li><span>Pantalla</span><strong>11" LCD 90 Hz</strong></li>
+            </ul>
+            <p class="card-price">$349.99</p>
+            <button class="btn btn-primary btn-card">Ver detalles</button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Categoría: Profesionales -->
+    <section id="profesionales" class="section section-catalog section-dark" aria-labelledby="titulo-profesionales">
+      <div class="section-header">
+        <h2 id="titulo-profesionales" class="section-title">Tabletas <span>Profesionales</span></h2>
+        <p class="section-subtitle">Potencia y precisión para el entorno empresarial</p>
+      </div>
+      <div class="cards-grid">
+
+        <!-- Tarjeta: Samsung Galaxy Tab S9 Ultra -->
+        <article class="product-card" aria-label="Samsung Galaxy Tab S9 Ultra">
+          <div class="card-badge card-badge--pro">Pro</div>
+          <img
+            src="https://images.unsplash.com/photo-1589492477829-5e65395b66cc?w=400&q=80"
+            alt="Samsung Galaxy Tab S9 Ultra"
+            class="card-img"
+            width="400" height="260"
+            loading="lazy"
+          />
+          <div class="card-body">
+            <h3 class="card-title">Samsung Galaxy Tab S9 Ultra</h3>
+            <ul class="card-specs">
+              <li><span>Procesador</span><strong>Snapdragon 8 Gen 2</strong></li>
+              <li><span>RAM</span><strong>12 GB</strong></li>
+              <li><span>Almacenamiento</span><strong>256 GB</strong></li>
+              <li><span>Pantalla</span><strong>14.6" AMOLED 120 Hz</strong></li>
+            </ul>
+            <p class="card-price">$1,199.99</p>
+            <button class="btn btn-primary btn-card">Ver detalles</button>
+          </div>
+        </article>
+
+        <!-- Tarjeta: Microsoft Surface Pro 9 -->
+        <article class="product-card" aria-label="Microsoft Surface Pro 9">
+          <div class="card-badge card-badge--pro">Pro</div>
+          <img
+            src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=400&q=80"
+            alt="Microsoft Surface Pro 9"
+            class="card-img"
+            width="400" height="260"
+            loading="lazy"
+          />
+          <div class="card-body">
+            <h3 class="card-title">Microsoft Surface Pro 9</h3>
+            <ul class="card-specs">
+              <li><span>Procesador</span><strong>Intel Core i7-1255U</strong></li>
+              <li><span>RAM</span><strong>16 GB</strong></li>
+              <li><span>Almacenamiento</span><strong>512 GB SSD</strong></li>
+              <li><span>Pantalla</span><strong>13" PixelSense 120 Hz</strong></li>
+            </ul>
+            <p class="card-price">$1,599.99</p>
+            <button class="btn btn-primary btn-card">Ver detalles</button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Categoría: Creativas -->
+    <section id="creativas" class="section section-catalog" aria-labelledby="titulo-creativas">
+      <div class="section-header">
+        <h2 id="titulo-creativas" class="section-title">Tabletas <span>Creativas</span></h2>
+        <p class="section-subtitle">Diseño, ilustración y contenido sin límites</p>
+      </div>
+      <div class="cards-grid">
+
+        <!-- Tarjeta: Apple iPad Pro 12.9" -->
+        <article class="product-card" aria-label="Apple iPad Pro 12.9">
+          <div class="card-badge card-badge--creative">Creative</div>
+          <img
+            src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400&q=80"
+            alt="Apple iPad Pro 12.9"
+            class="card-img"
+            width="400" height="260"
+            loading="lazy"
+          />
+          <div class="card-body">
+            <h3 class="card-title">Apple iPad Pro 12.9"</h3>
+            <ul class="card-specs">
+              <li><span>Procesador</span><strong>Apple M2</strong></li>
+              <li><span>RAM</span><strong>16 GB</strong></li>
+              <li><span>Almacenamiento</span><strong>512 GB</strong></li>
+              <li><span>Pantalla</span><strong>12.9" Liquid Retina XDR</strong></li>
+            </ul>
+            <p class="card-price">$1,299.99</p>
+            <button class="btn btn-primary btn-card">Ver detalles</button>
+          </div>
+        </article>
+
+        <!-- Tarjeta: Wacom MobileStudio Pro 16 -->
+        <article class="product-card" aria-label="Wacom MobileStudio Pro 16">
+          <div class="card-badge card-badge--creative">Creative</div>
+          <img
+            src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&q=80"
+            alt="Wacom MobileStudio Pro 16"
+            class="card-img"
+            width="400" height="260"
+            loading="lazy"
+          />
+          <div class="card-body">
+            <h3 class="card-title">Wacom MobileStudio Pro 16</h3>
+            <ul class="card-specs">
+              <li><span>Procesador</span><strong>Intel Core i7</strong></li>
+              <li><span>RAM</span><strong>16 GB</strong></li>
+              <li><span>Almacenamiento</span><strong>512 GB SSD</strong></li>
+              <li><span>Pantalla</span><strong>15.6" IGZO 4K</strong></li>
+            </ul>
+            <p class="card-price">$2,499.99</p>
+            <button class="btn btn-primary btn-card">Ver detalles</button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECCIÓN 3: Tabla comparativa de especificaciones
+         ============================================================ -->
+    <section id="comparativa" class="section section-compare" aria-labelledby="titulo-comparativa">
+      <div class="section-header">
+        <h2 id="titulo-comparativa" class="section-title">Tabla <span>Comparativa</span></h2>
+        <p class="section-subtitle">Todas las especificaciones en un solo vistazo</p>
+      </div>
+
+      <!-- Tabla con 5 tabletas del catálogo -->
+      <div class="table-wrapper" role="region" aria-label="Comparativa de tabletas" tabindex="0">
+        <table class="compare-table">
+          <caption class="sr-only">Comparativa de especificaciones técnicas de tabletas</caption>
+          <thead>
+            <tr>
+              <th scope="col">Modelo</th>
+              <th scope="col">Procesador</th>
+              <th scope="col">RAM</th>
+              <th scope="col">Almacenamiento</th>
+              <th scope="col">Pantalla</th>
+              <th scope="col">Precio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Lenovo Tab P12</td>
+              <td>Dimensity 7050</td>
+              <td>8 GB</td>
+              <td>128 GB</td>
+              <td>12.7" LCD</td>
+              <td>$449.99</td>
+            </tr>
+            <tr>
+              <td>Samsung Tab A9+</td>
+              <td>Snapdragon 695</td>
+              <td>8 GB</td>
+              <td>128 GB</td>
+              <td>11" LCD 90 Hz</td>
+              <td>$349.99</td>
+            </tr>
+            <tr class="row-highlight">
+              <td>Samsung Tab S9 Ultra</td>
+              <td>Snapdragon 8 Gen 2</td>
+              <td>12 GB</td>
+              <td>256 GB</td>
+              <td>14.6" AMOLED</td>
+              <td>$1,199.99</td>
+            </tr>
+            <tr>
+              <td>MS Surface Pro 9</td>
+              <td>Intel Core i7</td>
+              <td>16 GB</td>
+              <td>512 GB SSD</td>
+              <td>13" PixelSense</td>
+              <td>$1,599.99</td>
+            </tr>
+            <tr>
+              <td>Apple iPad Pro 12.9"</td>
+              <td>Apple M2</td>
+              <td>16 GB</td>
+              <td>512 GB</td>
+              <td>12.9" Liquid Retina</td>
+              <td>$1,299.99</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Comparador de RAM (Caso 4 – comparador básico) -->
+      <div class="ram-comparator" aria-labelledby="titulo-comparador">
+        <h3 id="titulo-comparador" class="comparator-title">Comparador de RAM</h3>
+        <div class="comparator-controls">
+          <div class="comparator-select-wrap">
+            <label for="tablet-a">Tableta A</label>
+            <select id="tablet-a">
+              <option value="8">Lenovo Tab P12 (8 GB)</option>
+              <option value="8">Samsung Tab A9+ (8 GB)</option>
+              <option value="12">Samsung Tab S9 Ultra (12 GB)</option>
+              <option value="16">MS Surface Pro 9 (16 GB)</option>
+              <option value="16">Apple iPad Pro 12.9" (16 GB)</option>
+            </select>
+          </div>
+          <div class="comparator-select-wrap">
+            <label for="tablet-b">Tableta B</label>
+            <select id="tablet-b">
+              <option value="8">Lenovo Tab P12 (8 GB)</option>
+              <option value="8">Samsung Tab A9+ (8 GB)</option>
+              <option value="12" selected>Samsung Tab S9 Ultra (12 GB)</option>
+              <option value="16">MS Surface Pro 9 (16 GB)</option>
+              <option value="16">Apple iPad Pro 12.9" (16 GB)</option>
+            </select>
+          </div>
+          <button id="btn-comparar" class="btn btn-primary">Comparar RAM</button>
+        </div>
+        <!-- Resultado del comparador -->
+        <p id="resultado-comparador" class="comparator-result" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECCIÓN 4: Opiniones de clientes
+         ============================================================ -->
+    <section id="opiniones" class="section section-reviews section-dark" aria-labelledby="titulo-opiniones">
+      <div class="section-header">
+        <h2 id="titulo-opiniones" class="section-title">Lo que dicen <span>nuestros clientes</span></h2>
+        <p class="section-subtitle">Experiencias reales de usuarios TabletPro</p>
+      </div>
+      <div class="reviews-grid">
+
+        <article class="review-card" aria-label="Opinión de María G.">
+          <div class="review-stars" aria-label="5 estrellas">★★★★★</div>
+          <blockquote class="review-text">
+            "Encontré la tableta perfecta para mis clases en la universidad. La comparativa del sitio me ayudó a decidir en minutos."
+          </blockquote>
+          <footer class="review-author">
+            <span class="review-avatar">MG</span>
+            <div>
+              <strong>María G.</strong>
+              <small>Estudiante universitaria</small>
+            </div>
+          </footer>
+        </article>
+
+        <article class="review-card" aria-label="Opinión de Carlos R.">
+          <div class="review-stars" aria-label="5 estrellas">★★★★★</div>
+          <blockquote class="review-text">
+            "Como diseñador gráfico, necesitaba algo potente. El equipo de TabletPro me orientó muy bien hacia la opción creativa."
+          </blockquote>
+          <footer class="review-author">
+            <span class="review-avatar">CR</span>
+            <div>
+              <strong>Carlos R.</strong>
+              <small>Diseñador gráfico freelance</small>
+            </div>
+          </footer>
+        </article>
+
+        <article class="review-card" aria-label="Opinión de Ana L.">
+          <div class="review-stars" aria-label="4 estrellas">★★★★☆</div>
+          <blockquote class="review-text">
+            "Excelente catálogo y precios muy competitivos. La tabla comparativa es de lo más útil que he visto en una tienda tech."
+          </blockquote>
+          <footer class="review-author">
+            <span class="review-avatar">AL</span>
+            <div>
+              <strong>Ana L.</strong>
+              <small>Gerente de proyectos</small>
+            </div>
+          </footer>
+        </article>
+
+      </div>
+    </section>
+
+  </main><!-- /main -->
+
+  <!-- ============================================================
+       FOOTER: Pie de página con contacto
+       ============================================================ -->
+  <footer id="contacto" class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+
+      <!-- Columna: marca -->
+      <div class="footer-brand">
+        <div class="logo logo--footer">
+          <span class="logo-icon">⊞</span>
+          <span class="logo-text">Tablet<strong>Pro</strong></span>
+        </div>
+        <p>La tienda especializada en tabletas electrónicas de alto rendimiento para cada estilo de vida.</p>
+      </div>
+
+      <!-- Columna: enlaces rápidos -->
+      <nav class="footer-nav" aria-label="Navegación del pie de página">
+        <h4>Categorías</h4>
+        <ul>
+          <li><a href="#academicas">Académicas</a></li>
+          <li><a href="#profesionales">Profesionales</a></li>
+          <li><a href="#creativas">Creativas</a></li>
+          <li><a href="#comparativa">Comparar</a></li>
+        </ul>
+      </nav>
+
+      <!-- Columna: contacto -->
+      <address class="footer-contact">
+        <h4>Contacto</h4>
+        <p>📧 <a href="mailto:hola@tabletpro.com">hola@tabletpro.com</a></p>
+        <p>📞 <a href="tel:+18095550199">+1 (809) 555-0199</a></p>
+        <p>📍 Santo Domingo, República Dominicana</p>
+        <div class="social-links" aria-label="Redes sociales">
+          <a href="#" aria-label="Facebook de TabletPro">FB</a>
+          <a href="#" aria-label="Instagram de TabletPro">IG</a>
+          <a href="#" aria-label="Twitter de TabletPro">TW</a>
+        </div>
+      </address>
+
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 TabletPro. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Enlace al archivo JavaScript externo (Caso 4) -->
+  <script src="script.js"></script>
+
+</body>
+</html>

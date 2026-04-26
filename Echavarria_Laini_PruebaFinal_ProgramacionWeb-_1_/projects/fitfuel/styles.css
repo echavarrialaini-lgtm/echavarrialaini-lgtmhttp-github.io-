@@ -1,0 +1,659 @@
+/* =====================================================
+   FitFuel Market - Hoja de Estilos
+   Practica 2 - Programacion Web
+   ===================================================== */
+
+
+/* --- variables de color, las use para no repetir codigo --- */
+:root {
+    --negro:        #0e0e0e;
+    --superficie:   #1c1c1c;
+    --superficie2:  #242424;
+    --verde:        #78c832;
+    --verde-oscuro: #5a9a24;
+    --naranja:      #f06030;
+    --texto:        #efefef;
+    --texto-gris:   #888;
+    --borde:        #2e2e2e;
+    --radio:        8px;
+}
+
+
+/* --- reset basico para que no haya margenes raros --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--negro);
+    color: var(--texto);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* las imagenes no deben salirse de su contenedor */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* clase utilitaria para el color verde en titulos */
+.verde {
+    color: var(--verde);
+}
+
+
+/* =====================================================
+   BOTONES
+   ===================================================== */
+
+.btn {
+    display: inline-block;
+    padding: 11px 26px;
+    border: none;
+    border-radius: var(--radio);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    transition: background 0.2s, transform 0.2s;
+}
+
+/* boton principal del hero */
+.btn-principal {
+    background-color: var(--verde);
+    color: #000;
+    padding: 14px 36px;
+    font-size: 15px;
+}
+
+.btn-principal:hover {
+    background-color: var(--verde-oscuro);
+    transform: translateY(-2px);
+}
+
+/* boton de cada tarjeta de producto */
+.btn-tarjeta {
+    background-color: var(--verde);
+    color: #000;
+    padding: 9px 18px;
+    font-size: 13px;
+}
+
+.btn-tarjeta:hover {
+    background-color: var(--verde-oscuro);
+}
+
+/* boton de contacto en el nav */
+.btn-nav {
+    background-color: var(--verde);
+    color: #000 !important;
+    padding: 9px 20px;
+    border-radius: var(--radio);
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.btn-nav:hover {
+    background-color: var(--verde-oscuro);
+}
+
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 36px;
+    background-color: #111;
+    border-bottom: 2px solid var(--verde);
+    position: sticky;
+    top: 0;
+    z-index: 99;
+}
+
+/* logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo-icono {
+    font-size: 26px;
+}
+
+/* uso h1 aqui pero le doy tamaño mas pequeño porque es el logo */
+.nombre-marca {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.nombre-marca span {
+    color: var(--verde);
+}
+
+/* navegacion horizontal en desktop */
+nav .menu {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+nav .menu a {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--texto-gris);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    transition: color 0.2s;
+}
+
+nav .menu a:hover {
+    color: var(--verde);
+}
+
+
+/* =====================================================
+   HERO BANNER
+   ===================================================== */
+
+.hero {
+    background: linear-gradient(135deg, #111 45%, #182810 100%);
+    padding: 90px 40px;
+    text-align: center;
+    border-bottom: 1px solid var(--borde);
+}
+
+.hero-etiqueta {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--verde);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 14px;
+}
+
+.hero-titulo {
+    font-size: 64px;
+    font-weight: 900;
+    line-height: 1.05;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.hero-subtitulo {
+    font-size: 17px;
+    color: var(--texto-gris);
+    margin-bottom: 32px;
+}
+
+
+/* =====================================================
+   SECCIONES GENERALES
+   ===================================================== */
+
+.seccion {
+    padding: 70px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* para la seccion de beneficios que tiene fondo diferente */
+.seccion-oscura {
+    background-color: var(--superficie2);
+    max-width: 100%;
+    padding: 70px 40px;
+}
+
+.titulo-seccion {
+    font-size: 38px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.subtitulo-seccion {
+    font-size: 15px;
+    color: var(--texto-gris);
+    text-align: center;
+    margin-bottom: 44px;
+}
+
+
+/* =====================================================
+   PRODUCTOS - grid de 4 columnas en desktop
+   ===================================================== */
+
+.grilla-productos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.tarjeta-producto {
+    background-color: var(--superficie);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+    overflow: hidden;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.tarjeta-producto:hover {
+    transform: translateY(-4px);
+    border-color: var(--verde);
+}
+
+/* contenedor de la imagen con posicion relativa para el badge */
+.img-contenedor {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    background-color: #222;
+}
+
+.img-producto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.tarjeta-producto:hover .img-producto {
+    transform: scale(1.04);
+}
+
+/* etiqueta de "mas vendido" o "nuevo" sobre la imagen */
+.etiqueta {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: var(--naranja);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.etiqueta-nuevo {
+    background-color: var(--verde);
+    color: #000;
+}
+
+/* info dentro de la tarjeta */
+.info-producto {
+    padding: 16px;
+}
+
+.tipo-producto {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--verde);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.nombre-producto {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 5px 0;
+}
+
+.desc-producto {
+    font-size: 12px;
+    color: var(--texto-gris);
+    margin-bottom: 14px;
+    line-height: 1.5;
+}
+
+/* fila donde va el precio y el boton */
+.fila-precio {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.precio {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--verde);
+}
+
+
+/* =====================================================
+   BENEFICIOS - grid de 4 columnas
+   ===================================================== */
+
+.grilla-beneficios {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tarjeta-beneficio {
+    background-color: var(--superficie);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+    padding: 28px 20px;
+    text-align: center;
+    transition: border-color 0.2s;
+}
+
+.tarjeta-beneficio:hover {
+    border-color: var(--verde);
+}
+
+.icono-beneficio {
+    font-size: 32px;
+    display: block;
+    margin-bottom: 14px;
+}
+
+.tarjeta-beneficio h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 9px;
+}
+
+.tarjeta-beneficio p {
+    font-size: 13px;
+    color: var(--texto-gris);
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   TESTIMONIOS - grid de 3 columnas
+   ===================================================== */
+
+.grilla-testimonios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.tarjeta-testimonio {
+    background-color: var(--superficie);
+    border: 1px solid var(--borde);
+    border-left: 4px solid var(--verde);
+    border-radius: var(--radio);
+    padding: 24px 20px;
+}
+
+.texto-testimonio {
+    font-size: 14px;
+    font-style: italic;
+    color: var(--texto);
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+
+/* fila del autor del testimonio */
+.autor-testimonio {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* circulo con las iniciales del cliente */
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--verde);
+    color: #000;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.autor-testimonio strong {
+    display: block;
+    font-size: 14px;
+}
+
+.deporte {
+    font-size: 11px;
+    color: var(--texto-gris);
+}
+
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+footer {
+    background-color: #111;
+    border-top: 2px solid var(--verde);
+    padding: 50px 40px 24px;
+}
+
+.footer-contenido {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 36px;
+    max-width: 1200px;
+    margin: 0 auto 32px;
+}
+
+.footer-marca {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--verde);
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.footer-desc {
+    font-size: 13px;
+    color: var(--texto-gris);
+    line-height: 1.7;
+}
+
+.footer-columna h4 {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--verde);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 14px;
+}
+
+.footer-columna ul li {
+    font-size: 13px;
+    color: var(--texto-gris);
+    margin-bottom: 8px;
+}
+
+.footer-columna ul a:hover {
+    color: var(--texto);
+}
+
+.footer-copy {
+    text-align: center;
+    font-size: 12px;
+    color: var(--texto-gris);
+    border-top: 1px solid var(--borde);
+    padding-top: 18px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* =====================================================
+   MEDIA QUERY - solo para mobile (max 480px)
+   Este bloque adapta todo el sitio a pantallas pequeñas.
+   No hay otro breakpoint, solo este segun la practica.
+   ===================================================== */
+
+@media (max-width: 480px) {
+
+    /* ajuste 1: el header pasa a columna y el menu se apila verticalmente
+       porque en un celular no caben todos los enlaces en una sola fila */
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 14px 18px;
+    }
+
+    /* el menu pasa de horizontal a vertical (columna) */
+    nav .menu {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        width: 100%;
+    }
+
+    /* cada enlace del menu ocupa toda la fila para facil toque */
+    nav .menu li {
+        width: 100%;
+    }
+
+    nav .menu a {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+        border-bottom: 1px solid var(--borde);
+        font-size: 14px;
+    }
+
+    /* ajuste 2: tipografia del hero reducida para que entre en 480px */
+    .hero {
+        padding: 50px 18px;
+    }
+
+    .hero-titulo {
+        font-size: 36px;   /* se reduce de 64px a 36px */
+    }
+
+    .hero-subtitulo {
+        font-size: 14px;
+    }
+
+    /* ajuste 3: el boton principal ocupa todo el ancho en mobile */
+    .btn-principal {
+        width: 100%;
+        text-align: center;
+        padding: 14px;
+    }
+
+    /* ajuste 4: se reduce el padding de las secciones para mobile
+       para que no haya tanto espacio perdido en pantalla pequena */
+    .seccion {
+        padding: 44px 18px;
+    }
+
+    .seccion-oscura {
+        padding: 44px 18px;
+    }
+
+    /* ajuste 5: tamaño del titulo de seccion reducido */
+    .titulo-seccion {
+        font-size: 26px;   /* se reduce de 38px */
+    }
+
+    .subtitulo-seccion {
+        font-size: 13px;
+        margin-bottom: 28px;
+    }
+
+    /* ajuste 6: productos en 1 sola columna en mobile
+       el grid de 4 columnas no cabe en 480px */
+    .grilla-productos {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    /* ajuste 7: las imagenes de producto al 100% del contenedor */
+    .img-producto {
+        width: 100%;
+        height: auto;   /* se redimensiona de forma proporcional */
+    }
+
+    /* la altura del contenedor tambien se adapta */
+    .img-contenedor {
+        height: 180px;
+    }
+
+    /* ajuste 8: el boton de agregar ocupa todo el ancho en mobile
+       para que sea facil de tocar con el dedo */
+    .btn-tarjeta {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+    }
+
+    /* la fila precio-boton se apila en columna */
+    .fila-precio {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    /* ajuste 9: beneficios en 1 columna */
+    .grilla-beneficios {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    /* ajuste 10: testimonios en 1 columna */
+    .grilla-testimonios {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    /* ajuste 11: footer en 1 columna para no desbordar en mobile */
+    footer {
+        padding: 36px 18px 20px;
+    }
+
+    .footer-contenido {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* ajuste 12: fuente del body un poco mas grande en mobile
+       para mejor legibilidad en pantallas pequenas */
+    body {
+        font-size: 15px;
+    }
+
+}
+/* --- fin media query mobile --- */

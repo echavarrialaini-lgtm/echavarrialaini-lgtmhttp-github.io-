@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- configuracion basica del documento -->
+    <meta charset="UTF-8">
+    <!-- el viewport es necesario para que funcione bien en mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitFuel Market</title>
+    <!-- enlace al CSS externo, separado del HTML como pide la practica -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ========================================
+         HEADER - encabezado principal del sitio
+         ======================================== -->
+    <header>
+        <!-- logo y nombre de la tienda -->
+        <div class="logo">
+            <span class="logo-icono">⚡</span>
+            <h1 class="nombre-marca">FitFuel <span>Market</span></h1>
+        </div>
+
+        <!-- navegacion principal del sitio -->
+        <nav>
+            <ul class="menu">
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#beneficios">Beneficios</a></li>
+                <li><a href="#testimonios">Testimonios</a></li>
+                <li><a href="#footer" class="btn-nav">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ========================================
+         SECCION HERO - banner de bienvenida
+         ======================================== -->
+    <section class="hero">
+        <p class="hero-etiqueta">💪 Suplementos deportivos premium</p>
+        <h2 class="hero-titulo">Entrena más fuerte,<br>recuperate mejor</h2>
+        <p class="hero-subtitulo">Todo lo que necesitas para tu rendimiento en un solo lugar</p>
+        <a href="#productos" class="btn btn-principal">Ver catálogo</a>
+    </section>
+
+    <!-- ========================================
+         MAIN - contenido principal de la pagina
+         ======================================== -->
+    <main>
+
+        <!-- ===== SECCION PRODUCTOS ===== -->
+        <!-- aqui van los 4 productos minimo que pide la practica -->
+        <section id="productos" class="seccion">
+            <h2 class="titulo-seccion">Nuestros <span class="verde">Productos</span></h2>
+            <p class="subtitulo-seccion">Calidad certificada para atletas serios</p>
+
+            <!-- grid con los productos, 4 columnas en desktop -->
+            <div class="grilla-productos">
+
+                <!-- producto 1: proteina whey -->
+                <article class="tarjeta-producto">
+                    <div class="img-contenedor">
+                        <img
+                            src="https://images.unsplash.com/photo-1593095948071-474c5cc2989d?w=400&q=80"
+                            alt="Whey Protein Gold 2kg"
+                            class="img-producto"
+                        >
+                        <!-- etiqueta de producto popular -->
+                        <span class="etiqueta">Más vendido</span>
+                    </div>
+                    <div class="info-producto">
+                        <!-- tipo de producto segun lo que pide la practica -->
+                        <span class="tipo-producto">Proteína</span>
+                        <h3 class="nombre-producto">Whey Protein Gold</h3>
+                        <p class="desc-producto">2 kg · Sabor chocolate · 27g proteína por servicio</p>
+                        <div class="fila-precio">
+                            <span class="precio">RD$3,800</span>
+                            <button class="btn btn-tarjeta">Agregar</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- producto 2: creatina monohidrato -->
+                <article class="tarjeta-producto">
+                    <div class="img-contenedor">
+                        <img
+                            src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80"
+                            alt="Creatina Monohidrato 500g"
+                            class="img-producto"
+                        >
+                    </div>
+                    <div class="info-producto">
+                        <span class="tipo-producto">Creatina</span>
+                        <h3 class="nombre-producto">Creatina Monohidrato</h3>
+                        <p class="desc-producto">500 g · Micronizada · Fuerza y recuperación muscular</p>
+                        <div class="fila-precio">
+                            <span class="precio">RD$1,500</span>
+                            <button class="btn btn-tarjeta">Agregar</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- producto 3: pre-workout -->
+                <article class="tarjeta-producto">
+                    <div class="img-contenedor">
+                        <img
+                            src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&q=80"
+                            alt="Pre-Workout X-Plode 300g"
+                            class="img-producto"
+                        >
+                        <span class="etiqueta etiqueta-nuevo">Nuevo</span>
+                    </div>
+                    <div class="info-producto">
+                        <span class="tipo-producto">Pre-workout</span>
+                        <h3 class="nombre-producto">Pre-Workout X-Plode</h3>
+                        <p class="desc-producto">300 g · Sandía · Energía extrema sin crash</p>
+                        <div class="fila-precio">
+                            <span class="precio">RD$2,200</span>
+                            <button class="btn btn-tarjeta">Agregar</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- producto 4: accesorio shaker -->
+                <article class="tarjeta-producto">
+                    <div class="img-contenedor">
+                        <img
+                            src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&q=80"
+                            alt="Shaker Pro 700ml"
+                            class="img-producto"
+                        >
+                    </div>
+                    <div class="info-producto">
+                        <span class="tipo-producto">Accesorio</span>
+                        <h3 class="nombre-producto">Shaker Pro 700ml</h3>
+                        <p class="desc-producto">Acero inoxidable · Con compartimento extra para suplementos</p>
+                        <div class="fila-precio">
+                            <span class="precio">RD$850</span>
+                            <button class="btn btn-tarjeta">Agregar</button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+            <!-- fin grilla-productos -->
+        </section>
+
+        <!-- ===== SECCION BENEFICIOS ===== -->
+        <section id="beneficios" class="seccion seccion-oscura">
+            <h2 class="titulo-seccion">¿Por qué elegirnos?</h2>
+            <p class="subtitulo-seccion">Comprometidos con tu progreso desde el primer día</p>
+
+            <div class="grilla-beneficios">
+
+                <div class="tarjeta-beneficio">
+                    <span class="icono-beneficio">🔬</span>
+                    <h3>Calidad Certificada</h3>
+                    <p>Todos nuestros productos tienen certificación internacional y pasan controles de calidad estrictos.</p>
+                </div>
+
+                <div class="tarjeta-beneficio">
+                    <span class="icono-beneficio">🚀</span>
+                    <h3>Envío Rápido</h3>
+                    <p>Recibe tu pedido en 24 a 48 horas en Santo Domingo. Enviamos a todo el país.</p>
+                </div>
+
+                <div class="tarjeta-beneficio">
+                    <span class="icono-beneficio">💬</span>
+                    <h3>Asesoría Gratuita</h3>
+                    <p>Nuestro equipo te ayuda a elegir el suplemento ideal según tus objetivos personales.</p>
+                </div>
+
+                <div class="tarjeta-beneficio">
+                    <span class="icono-beneficio">🔒</span>
+                    <h3>Pago Seguro</h3>
+                    <p>Cifrado SSL en todas las transacciones. Aceptamos tarjetas, transferencia y efectivo.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== SECCION TESTIMONIOS ===== -->
+        <section id="testimonios" class="seccion">
+            <h2 class="titulo-seccion">Lo que dicen nuestros <span class="verde">clientes</span></h2>
+            <p class="subtitulo-seccion">Resultados reales de personas reales</p>
+
+            <div class="grilla-testimonios">
+
+                <!-- testimonio 1 -->
+                <blockquote class="tarjeta-testimonio">
+                    <p class="texto-testimonio">"Llevo 3 meses usando la Whey Protein de FitFuel y los resultados me sorprendieron. Excelente sabor y se mezcla perfecto. No volvería a comprar en otro lugar."</p>
+                    <footer class="autor-testimonio">
+                        <span class="avatar">JR</span>
+                        <div>
+                            <strong>Juan Rodríguez</strong>
+                            <span class="deporte">Powerlifting · Santo Domingo</span>
+                        </div>
+                    </footer>
+                </blockquote>
+
+                <!-- testimonio 2 -->
+                <blockquote class="tarjeta-testimonio">
+                    <p class="texto-testimonio">"El Pre-Workout X-Plode cambió mis entrenamientos por completo. Energía sin nerviosismo y sin ese crash horrible del final. Lo recomiendo 100%."</p>
+                    <footer class="autor-testimonio">
+                        <span class="avatar">MC</span>
+                        <div>
+                            <strong>María Castillo</strong>
+                            <span class="deporte">CrossFit · Santiago</span>
+                        </div>
+                    </footer>
+                </blockquote>
+
+                <!-- testimonio 3 -->
+                <blockquote class="tarjeta-testimonio">
+                    <p class="texto-testimonio">"Compré la creatina un martes y llegó el miércoles. La atención fue excelente y el precio es el mejor del mercado dominicano. Muy satisfecho."</p>
+                    <footer class="autor-testimonio">
+                        <span class="avatar">LP</span>
+                        <div>
+                            <strong>Luis Pérez</strong>
+                            <span class="deporte">Culturismo · La Romana</span>
+                        </div>
+                    </footer>
+                </blockquote>
+
+            </div>
+        </section>
+
+    </main>
+    <!-- fin main -->
+
+    <!-- ========================================
+         FOOTER - pie de pagina con info de contacto
+         ======================================== -->
+    <footer id="footer">
+        <div class="footer-contenido">
+
+            <!-- columna marca -->
+            <div class="footer-columna">
+                <p class="footer-marca">⚡ FitFuel Market</p>
+                <p class="footer-desc">Tu tienda de nutrición deportiva en República Dominicana.</p>
+            </div>
+
+            <!-- columna navegacion -->
+            <div class="footer-columna">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#beneficios">Beneficios</a></li>
+                    <li><a href="#testimonios">Testimonios</a></li>
+                </ul>
+            </div>
+
+            <!-- columna contacto -->
+            <div class="footer-columna">
+                <h4>Contacto</h4>
+                <ul>
+                    <li>📧 info@fitfuelmarket.com</li>
+                    <li>📱 (809) 555-0123</li>
+                    <li>📍 Santo Domingo, RD</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- linea de copyright -->
+        <p class="footer-copy">© 2026 FitFuel Market · Todos los derechos reservados</p>
+    </footer>
+
+</body>
+</html>
